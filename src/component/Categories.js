@@ -10,25 +10,29 @@ const Categories = () => {
     client
       .fetch(
         `
-       *[_type == "category" ]
-       `,
+        *[_type == "category"]
+      `,
       )
       .then(data => {
         setCategory(data);
+      })
+      .catch(error => {
+        console.error('Error fetching categories:', error);
       });
   }, []);
 
   return (
     <ScrollView
+      // eslint-disable-next-line react-native/no-inline-styles
       contentContainerStyle={{
         paddingHorizontal: 15,
         paddingTop: 10,
       }}
       horizontal
       showsHorizontalScrollIndicator={false}>
-      {/*CategoryCard*/}
+      {/* CategoryCard */}
       {category?.map(cat => (
-        <CategoryCart imageUrl={cat.image} title={cat.name} />
+        <CategoryCart imageUrl={cat.image} title={cat.name} key={cat.id} />
       ))}
     </ScrollView>
   );

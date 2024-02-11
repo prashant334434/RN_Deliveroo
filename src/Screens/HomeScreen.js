@@ -1,6 +1,6 @@
 import {View, Text, SafeAreaView, Image, TextInput} from 'react-native';
 import React, {useEffect, useLayoutEffect, useState} from 'react';
-// import tw from 'twrnc';
+import tw from 'twrnc';
 import {useNavigation} from '@react-navigation/native';
 import {
   UserIcon,
@@ -43,21 +43,21 @@ const HomeScreen = () => {
         setFeaturedCategory(data);
       });
   }, []);
-
+  console.log(client);
   return (
-    <SafeAreaView className="bg-white pt-5">
+    <SafeAreaView style={tw`bg-white pt-5`}>
       {/*header*/}
-      <View className="flex-row pb-3 items-center mx-4 space-x-2 ">
+      <View style={tw`flex-row pb-3 items-center mx-4 space-x-2 `}>
         <Image
           source={{
             uri: 'https://links.papareact.com/wru',
           }}
-          className="h-7 w-7 bg-gray-300 p-4 rounded-full"
+          style={tw`h-7 w-7 bg-gray-300 p-4 rounded-full`}
         />
 
-        <View className="flex-1">
-          <Text className="font-bold text-gray-400 text-xs">Deliver Now!</Text>
-          <Text className="font-bold text-xl">
+        <View style={tw`flex-1`}>
+          <Text style={tw`font-bold text-gray-400 text-xs`}>Deliver Now!</Text>
+          <Text tyle={tw`font-bold text-xl`}>
             Current Location
             <ChevronDownIcon size={20} color="#00CCBB" />
           </Text>
@@ -67,8 +67,8 @@ const HomeScreen = () => {
       </View>
 
       {/*search*/}
-      <View className="flex-row items-center space-x-2 pb-2 mx-4  ">
-        <View className="flex-row flex-1 space-x-2 bg-gray-200 p-3">
+      <View style={tw`flex-row items-center space-x-2 pb-2 mx-4  `}>
+        <View style={tw`flex-row flex-1 space-x-2 bg-gray-200 p-3`}>
           <Icon.Search color="gray" size={20} opacity={0.5} />
           <TextInput
             placeholder="Restaurants and cuisines"
@@ -80,7 +80,7 @@ const HomeScreen = () => {
 
       {/*body*/}
       <ScrollView
-        className="bg-gray-100"
+        style={tw`bg-gray-100`}
         contentContainerStyle={{
           paddingBottom: 100,
         }}>
