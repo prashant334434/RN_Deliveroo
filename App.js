@@ -1,17 +1,17 @@
 import {View, Text, SafeAreaView} from 'react-native';
 import React from 'react';
-import Tst from './src/Tst';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import HomeScreen from './src/Screens/HomeScreen';
 
+const Stack = createNativeStackNavigator();
 const App = () => {
   return (
-    <SafeAreaView>
-      <View>
-        <Text className="text-green">App</Text>
-        <Text className="text-red-300">App</Text>
-        <Text className="text-red-600 text-center text-4xl">App</Text>
-        <Text className="text-black ">App</Text>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
