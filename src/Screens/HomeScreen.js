@@ -55,9 +55,9 @@ const HomeScreen = () => {
           style={tw`h-7 w-7 bg-gray-300 p-4 rounded-full`}
         />
 
-        <View style={tw`flex-1`}>
-          <Text style={tw`font-bold text-gray-400 text-xs`}>Deliver Now!</Text>
-          <Text tyle={tw`font-bold text-xl`}>
+        <View style={tw`flex-1 mx-2`}>
+          <Text style={tw`font-bold text-gray-400 text-xs `}>Deliver Now!</Text>
+          <Text tyle={tw`font-bold text-xl `}>
             Current Location
             <ChevronDownIcon size={20} color="#00CCBB" />
           </Text>
